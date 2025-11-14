@@ -3,23 +3,35 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import BeforeAfterGallery from '~/components/widgets/BeforeAfterGallery.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import case1Before from '~/assets/images/gallery/1_before.png';
+import case1After from '~/assets/images/gallery/1_after.png';
+import case2Before from '~/assets/images/gallery/2_before.png';
+import case2After from '~/assets/images/gallery/2_after.png';
 
 const metadata = {
   title: 'Galería de Casos - Dra. Eugenia Vila',
   description: 'Ve las transformaciones reales de nuestros pacientes. Casos de implantes dentales, alineadores y odontología estética con resultados impresionantes.',
 };
 
-// Gallery cases - placeholder examples until real images are added
+// Gallery cases
 const cases = [
   {
-    title: 'Transformación Completa de Sonrisa',
-    description: 'Tratamiento con carillas y bonding estético',
-    beforeImage: 'https://placehold.co/600x400/e5e7eb/6b7280?text=Antes',
-    afterImage: 'https://placehold.co/600x400/3b82f6/ffffff?text=Despu%C3%A9s',
-    beforeAlt: 'Sonrisa antes del tratamiento',
-    afterAlt: 'Sonrisa después del tratamiento',
+    title: 'Caso 1',
+    description: 'Transformación dental completa',
+    beforeImage: case1Before.src,
+    afterImage: case1After.src,
+    beforeAlt: 'Antes del tratamiento - Caso 1',
+    afterAlt: 'Después del tratamiento - Caso 1',
   },
-  // More cases can be added here as they become available
+  {
+    title: 'Caso 2',
+    description: 'Transformación dental completa',
+    beforeImage: case2Before.src,
+    afterImage: case2After.src,
+    beforeAlt: 'Antes del tratamiento - Caso 2',
+    afterAlt: 'Después del tratamiento - Caso 2',
+  },
+  // Add more cases here as images become available
 ];
 ---
 
@@ -45,7 +57,7 @@ const cases = [
     <BeforeAfterGallery cases={cases} language="es" />
 
     <div class="mt-12 p-8 bg-blue-50 dark:bg-slate-800 rounded-lg text-center">
-      <h3 class="text-2xl font-bold mb-4">¿Más Casos Disponibles Próximamente?</h3>
+      <h3 class="text-2xl font-bold mb-4">Más Casos Disponibles Próximamente</h3>
       <p class="text-muted mb-6 max-w-2xl mx-auto">
         Estamos en proceso de añadir más casos de transformación a nuestra galería. Mientras tanto, puede ver reseñas
         detalladas de nuestros pacientes satisfechos en nuestra página de reseñas.
