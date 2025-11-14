@@ -47,7 +47,6 @@ const {
 } = Astro.props;
 
 const urlPath = new URL(Astro.url).pathname;
-const currentPath = `/${trimSlash(urlPath)}` || '/';
 const currentLang = getLanguageFromURL(Astro.url.pathname);
 const homeLink = currentLang === 'en' ? getPermalink('/en') : getHomePermalink();
 
