@@ -1,4 +1,4 @@
-import reviewsData from "../data/reviews";
+import reviewsData from '../data/reviews';
 
 export interface Review {
   name: string;
@@ -13,18 +13,18 @@ export interface Review {
 }
 
 const topReviewsOrder = [
-  "Isabel",
-  "Nuria Salido Iniesta",
-  "Emma",
-  "Teresa Vez luque",
-  "Gerson Suaznabar",
-  "Giuseppe Tinaglia",
-  "customer",
-  "J Ainsworth",
-  "Santi Barreche Pelaez",
-  "Laura Scott",
-  "S F",
-  "Zoe King",
+  'Isabel',
+  'Nuria Salido Iniesta',
+  'Emma',
+  'Teresa Vez luque',
+  'Gerson Suaznabar',
+  'Giuseppe Tinaglia',
+  'customer',
+  'J Ainsworth',
+  'Santi Barreche Pelaez',
+  'Laura Scott',
+  'S F',
+  'Zoe King',
 ];
 
 export function getAllReviews(): Review[] {
@@ -44,9 +44,7 @@ export function getFeaturedReviews(count: number = 8): Review[] {
   });
 
   // Fill remaining slots with other 5-star reviews
-  const remainingReviews = reviews.filter(
-    (r) => !orderedReviews.includes(r) && r.rating === 5,
-  );
+  const remainingReviews = reviews.filter((r) => !orderedReviews.includes(r) && r.rating === 5);
 
   return [...orderedReviews, ...remainingReviews].slice(0, count);
 }
@@ -56,14 +54,14 @@ export function getReviewsByClinic(clinic: string): Review[] {
 }
 
 export function getAvatarDisplay(avatar: string): {
-  type: "image" | "initials";
+  type: 'image' | 'initials';
   value: string;
   color?: string;
 } {
-  if (avatar.startsWith("http")) {
-    return { type: "image", value: avatar };
+  if (avatar.startsWith('http')) {
+    return { type: 'image', value: avatar };
   }
   // Format like "EM, green" or "CU, pink"
-  const [initials, color] = avatar.split(", ");
-  return { type: "initials", value: initials, color: color || "blue" };
+  const [initials, color] = avatar.split(', ');
+  return { type: 'initials', value: initials, color: color || 'blue' };
 }

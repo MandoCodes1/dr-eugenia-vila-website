@@ -60,21 +60,23 @@ const normalizePath = (path: string): string => {
 // Helper function to check if a link is active
 const isActiveLink = (href: string | undefined): boolean => {
   if (!href) return false;
-  
+
   const normalizedHref = normalizePath(href);
   const normalizedCurrentPath = normalizePath(urlPath);
-  
+
   // Exact match
   if (normalizedHref === normalizedCurrentPath) {
     return true;
   }
-  
+
   // Handle home page edge cases (empty path, root path)
-  if ((normalizedHref === '/' || normalizedHref === '') && 
-      (normalizedCurrentPath === '/' || normalizedCurrentPath === '')) {
+  if (
+    (normalizedHref === '/' || normalizedHref === '') &&
+    (normalizedCurrentPath === '/' || normalizedCurrentPath === '')
+  ) {
     return true;
   }
-  
+
   return false;
 };
 ---

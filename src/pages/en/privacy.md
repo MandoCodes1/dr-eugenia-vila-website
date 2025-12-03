@@ -1,6 +1,6 @@
 ---
-title: "Privacy Policy"
-layout: "~/layouts/MarkdownLayout.astro"
+title: 'Privacy Policy'
+layout: '~/layouts/MarkdownLayout.astro'
 ---
 
 _Last updated_: January 15, 2025

@@ -59,8 +59,18 @@ function getTestimonialId(index: number, name: string): string {
     {
       testimonials &&
         testimonials.map(({ testimonial, name, image, rating, date, source, link }, index) => {
-          const isImageAvatar = typeof image === 'object' && image !== null && 'src' in image && typeof image.src === 'string' && image.src.startsWith('http');
-          const imageSrc = typeof image === 'object' && image !== null && 'src' in image && typeof image.src === 'string' ? image.src : (typeof image === 'string' ? image : '');
+          const isImageAvatar =
+            typeof image === 'object' &&
+            image !== null &&
+            'src' in image &&
+            typeof image.src === 'string' &&
+            image.src.startsWith('http');
+          const imageSrc =
+            typeof image === 'object' && image !== null && 'src' in image && typeof image.src === 'string'
+              ? image.src
+              : typeof image === 'string'
+                ? image
+                : '';
           const avatarColor = getAvatarColor(imageSrc);
           const initials = name ? getInitials(name) : '';
           const testimonialId = getTestimonialId(index, name || '');
@@ -71,12 +81,7 @@ function getTestimonialId(index: number, name: string): string {
               <div class="flex items-start gap-4 mb-4">
                 <div class="flex-shrink-0">
                   {isImageAvatar ? (
-                    <img
-                      src={imageSrc}
-                      alt={name || ''}
-                      class="w-12 h-12 rounded-full object-cover"
-                      loading="lazy"
-                    />
+                    <img src={imageSrc} alt={name || ''} class="w-12 h-12 rounded-full object-cover" loading="lazy" />
                   ) : image ? (
                     typeof image === 'string' ? (
                       <Fragment set:html={image} />
@@ -91,7 +96,9 @@ function getTestimonialId(index: number, name: string): string {
                       />
                     )
                   ) : name ? (
-                    <div class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${avatarColor}`}>
+                    <div
+                      class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${avatarColor}`}
+                    >
                       {initials}
                     </div>
                   ) : null}
@@ -117,7 +124,7 @@ function getTestimonialId(index: number, name: string): string {
               {/* Testimonial Text */}
               {testimonial && (
                 <div class="flex-1 mb-4">
-                  <p 
+                  <p
                     id={`${testimonialId}-text`}
                     class="testimonial-text text-gray-700 dark:text-gray-300 line-clamp-6"
                     data-full-text={testimonial}
@@ -192,25 +199,25 @@ function getTestimonialId(index: number, name: string): string {
     testimonialTexts.forEach((textElement) => {
       const testimonialId = textElement.id.replace('-text', '');
       const toggleButton = document.getElementById(`${testimonialId}-toggle`);
-      
+
       if (!toggleButton) return;
 
       // Determine language from button's initial text
       const initialButtonText = toggleButton.textContent?.trim() || '';
       const isSpanish = initialButtonText === 'Leer más';
-      const readMoreText = isSpanish 
+      const readMoreText = isSpanish
         ? { more: 'Leer más', less: 'Leer menos' }
         : { more: 'Read more', less: 'Read less' };
 
       // Check if text is actually truncated
       const isTruncated = textElement.scrollHeight > textElement.clientHeight;
-      
+
       if (isTruncated) {
         toggleButton.classList.remove('hidden');
-        
+
         toggleButton.addEventListener('click', () => {
           const isExpanded = textElement.classList.contains('expanded');
-          
+
           if (isExpanded) {
             textElement.classList.remove('expanded');
             toggleButton.textContent = readMoreText.more;

@@ -97,12 +97,8 @@ dental_clinic_website/
 │   └── env.d.ts                    # Environment type definitions
 │
 ├── public/
-│   ├── _headers                    # Netlify cache headers
+│   ├── _headers                    # Cache headers for deployment
 │   └── robots.txt                  # SEO robots file
-│
-├── docs/                           # Project documentation
-│   ├── cv.md
-│   └── eugenia_vila_cv.pdf
 │
 ├── .github/
 │   └── workflows/

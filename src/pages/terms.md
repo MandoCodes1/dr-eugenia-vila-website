@@ -1,6 +1,6 @@
 ---
-title: "Términos y Condiciones"
-layout: "~/layouts/MarkdownLayout.astro"
+title: 'Términos y Condiciones'
+layout: '~/layouts/MarkdownLayout.astro'
 ---
 
 _Última actualización_: 15 de enero de 2025

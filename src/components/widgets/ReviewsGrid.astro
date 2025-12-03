@@ -54,14 +54,11 @@ function getReviewId(index: number, name: string): string {
           <div class="flex items-start gap-4 mb-4">
             <div class="flex-shrink-0">
               {isImageAvatar ? (
-                <img
-                  src={review.avatar}
-                  alt={review.name}
-                  class="w-12 h-12 rounded-full object-cover"
-                  loading="lazy"
-                />
+                <img src={review.avatar} alt={review.name} class="w-12 h-12 rounded-full object-cover" loading="lazy" />
               ) : (
-                <div class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${avatarColor}`}>
+                <div
+                  class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${avatarColor}`}
+                >
                   {initials}
                 </div>
               )}
@@ -84,7 +81,7 @@ function getReviewId(index: number, name: string): string {
 
           {/* Review Text */}
           <div class="flex-1 mb-4">
-            <p 
+            <p
               id={`${reviewId}-text`}
               class="review-text text-gray-700 dark:text-gray-300 line-clamp-6"
               data-full-text={text}
@@ -144,25 +141,25 @@ function getReviewId(index: number, name: string): string {
     reviewTexts.forEach((textElement) => {
       const reviewId = textElement.id.replace('-text', '');
       const toggleButton = document.getElementById(`${reviewId}-toggle`);
-      
+
       if (!toggleButton) return;
 
       // Determine language from button's initial text
       const initialButtonText = toggleButton.textContent?.trim() || '';
       const isSpanish = initialButtonText === 'Leer más';
-      const readMoreText = isSpanish 
+      const readMoreText = isSpanish
         ? { more: 'Leer más', less: 'Leer menos' }
         : { more: 'Read more', less: 'Read less' };
 
       // Check if text is actually truncated
       const isTruncated = textElement.scrollHeight > textElement.clientHeight;
-      
+
       if (isTruncated) {
         toggleButton.classList.remove('hidden');
-        
+
         toggleButton.addEventListener('click', () => {
           const isExpanded = textElement.classList.contains('expanded');
-          
+
           if (isExpanded) {
             textElement.classList.remove('expanded');
             toggleButton.textContent = readMoreText.more;
@@ -175,4 +172,3 @@ function getReviewId(index: number, name: string): string {
     });
   });
 </script>
-

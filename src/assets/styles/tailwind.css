@@ -11,9 +11,9 @@
     --aw-color-text-muted: #475569;
     --aw-color-bg-page: #ffffff;
 
-    --aw-font-sans: "Inter Variable", ui-sans-serif, system-ui;
+    --aw-font-sans: 'Inter Variable', ui-sans-serif, system-ui;
     --aw-font-serif: ui-serif, Georgia;
-    --aw-font-heading: "Inter Variable", ui-sans-serif, system-ui;
+    --aw-font-heading: 'Inter Variable', ui-sans-serif, system-ui;
   }
 
   .dark {
@@ -121,7 +121,7 @@
 /* Underline for desktop horizontal nav */
 @media (min-width: 768px) {
   nav .aw-link-active::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0.5rem;
     left: 1rem;

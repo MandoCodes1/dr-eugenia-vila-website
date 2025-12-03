@@ -1,6 +1,6 @@
 ---
-title: "Política de Privacidad"
-layout: "~/layouts/MarkdownLayout.astro"
+title: 'Política de Privacidad'
+layout: '~/layouts/MarkdownLayout.astro'
 ---
 
 _Última actualización_: 15 de enero de 2025

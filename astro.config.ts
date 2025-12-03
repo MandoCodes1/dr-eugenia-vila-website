@@ -1,44 +1,34 @@
-import path from "path";
-import { fileURLToPath } from "url";
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
-import partytown from "@astrojs/partytown";
-import icon from "astro-icon";
-import compress from "astro-compress";
-import type { AstroIntegration } from "astro";
+import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
+import mdx from '@astrojs/mdx';
+import partytown from '@astrojs/partytown';
+import icon from 'astro-icon';
+import compress from 'astro-compress';
+import type { AstroIntegration } from 'astro';
 
-import astrowind from "./src/integrations/astrowind";
+import astrowind from './src/integrations/astrowind';
 
-import {
-  readingTimeRemarkPlugin,
-  responsiveTablesRehypePlugin,
-  lazyImagesRehypePlugin,
-} from "./src/utils/frontmatter";
+import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
-const whenExternalScripts = (
-  items: (() => AstroIntegration) | (() => AstroIntegration)[] = [],
-) =>
-  hasExternalScripts
-    ? Array.isArray(items)
-      ? items.map((item) => item())
-      : [items()]
-    : [];
+const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
+  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  base: "/",
-  output: "static",
-  trailingSlash: "never",
+  base: '/',
+  output: 'static',
+  trailingSlash: 'never',
 
   i18n: {
-    defaultLocale: "es",
-    locales: ["es", "en"],
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
     routing: {
       prefixDefaultLocale: false,
     },
@@ -52,31 +42,31 @@ export default defineConfig({
     mdx(),
     icon({
       include: {
-        tabler: ["*"],
-        "flat-color-icons": [
-          "template",
-          "gallery",
-          "approval",
-          "document",
-          "advertising",
-          "currency-exchange",
-          "voice-presentation",
-          "business-contact",
-          "database",
+        tabler: ['*'],
+        'flat-color-icons': [
+          'template',
+          'gallery',
+          'approval',
+          'document',
+          'advertising',
+          'currency-exchange',
+          'voice-presentation',
+          'business-contact',
+          'database',
         ],
       },
     }),
 
     ...whenExternalScripts(() =>
       partytown({
-        config: { forward: ["dataLayer.push"] },
-      }),
+        config: { forward: ['dataLayer.push'] },
+      })
     ),
 
     compress({
       CSS: true,
       HTML: {
-        "html-minifier-terser": {
+        'html-minifier-terser': {
           removeAttributeQuotes: false,
         },
       },
@@ -87,12 +77,12 @@ export default defineConfig({
     }),
 
     astrowind({
-      config: "./config.yaml",
+      config: './config.yaml',
     }),
   ],
 
   image: {
-    domains: ["cdn.pixabay.com"],
+    domains: ['cdn.pixabay.com'],
   },
 
   markdown: {
@@ -103,7 +93,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "~": path.resolve(__dirname, "./src"),
+        '~': path.resolve(__dirname, './src'),
       },
     },
   },
