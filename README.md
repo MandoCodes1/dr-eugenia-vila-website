@@ -32,84 +32,51 @@ Built a professional website as a side project for a dental clinic in Málaga, S
 ## Project Structure
 
 ```
-dental_clinic_website/
+/
 ├── src/
 │   ├── assets/
-│   │   ├── favicons/               # Favicon set (SVG, PNG, ICO)
-│   │   ├── images/                 # Clinic images, gallery, service photos
+│   │   ├── favicons/
+│   │   ├── images/
 │   │   └── styles/
-│   │       └── tailwind.css        # Global Tailwind CSS
-│   │
+│   │       └── tailwind.css
 │   ├── components/
 │   │   ├── common/                 # Shared components (Analytics, Metadata, LanguageSwitcher, etc.)
 │   │   ├── ui/                     # Base UI components (Button, Form, Timeline, etc.)
 │   │   └── widgets/                # Page sections (Header, Footer, Hero, Features, Testimonials, etc.)
-│   │
 │   ├── data/
-│   │   ├── navigation.ts           # Bilingual navigation structure
-│   │   └── reviews.ts              # Patient reviews data
-│   │
+│   │   ├── navigation.ts
+│   │   └── reviews.ts
 │   ├── i18n/
-│   │   ├── en.json                 # English translations
-│   │   └── es.json                 # Spanish translations
-│   │
+│   │   ├── en.json
+│   │   └── es.json
 │   ├── integrations/
-│   │   └── astrowind/              # AstroWind template integration
-│   │
+│   │   └── astrowind/              # AstroWind template customization
 │   ├── layouts/
-│   │   ├── Layout.astro            # Base HTML layout
-│   │   ├── PageLayout.astro        # Standard page layout with Header/Footer
-│   │   └── MarkdownLayout.astro    # Markdown content layout
-│   │
+│   │   ├── Layout.astro
+│   │   ├── PageLayout.astro
+│   │   └── MarkdownLayout.astro
 │   ├── pages/
 │   │   ├── en/                     # English routes
 │   │   │   ├── index.astro
-│   │   │   ├── about.astro
-│   │   │   ├── services.astro
-│   │   │   ├── gallery.astro
-│   │   │   ├── reviews.astro
-│   │   │   ├── contact.astro
-│   │   │   ├── privacy.md
-│   │   │   └── terms.md
-│   │   ├── index.astro             # Spanish homepage
-│   │   ├── sobre-mi.astro          # About (Spanish)
-│   │   ├── servicios.astro         # Services (Spanish)
-│   │   ├── galeria.astro           # Gallery (Spanish)
-│   │   ├── resenas.astro           # Reviews (Spanish)
-│   │   ├── contacto.astro          # Contact (Spanish)
-│   │   ├── privacy.md              # Privacy policy (Spanish)
-│   │   ├── terms.md                # Terms (Spanish)
-│   │   └── 404.astro               # 404 error page
-│   │
+│   │   │   ├── ...
+│   │   ├── index.astro
+│   │   ├── ...
 │   ├── types/
-│   │   └── index.d.ts              # TypeScript type definitions
-│   │
+│   │   └── index.d.ts
 │   ├── utils/
-│   │   ├── directories.ts          # Directory path utilities
-│   │   ├── frontmatter.ts          # Markdown frontmatter processing
-│   │   ├── i18n.ts                 # Internationalization utilities
-│   │   ├── images.ts               # Image optimization helpers
-│   │   ├── images-optimization.ts  # Advanced image processing
-│   │   ├── permalinks.ts           # URL generation
-│   │   ├── reviews.ts              # Review processing & filtering
-│   │   └── utils.ts                # General utility functions
-│   │
-│   └── env.d.ts                    # Environment type definitions
-│
+│   │   ├── i18n.ts
+│   │   ├── images.ts
+│   │   ├── images-optimization.ts
+│   │   ├── ...
+│   └── env.d.ts
 ├── public/
-│   ├── _headers                    # Cache headers for deployment
-│   └── robots.txt                  # SEO robots file
-│
+│   ├── _headers
+│   └── robots.txt
 ├── .github/
 │   └── workflows/
-│       ├── deploy.yml              # GitHub Pages deployment
+│       ├── deploy.yml              # GitHub Pages deployment pipeline
 │       └── actions.yaml            # CI/CD checks
-│
-├── astro.config.ts                 # Astro framework configuration
-├── config.yaml                     # Site configuration (SEO, i18n, metadata)
-├── tailwind.config.js              # Tailwind CSS customization
-├── tsconfig.json                   # TypeScript configuration
-├── eslint.config.js                # ESLint rules
-├── package.json                    # Dependencies & scripts
-└── LICENSE.md
+├── astro.config.ts
+├── package.json
+└── ...
 ```
