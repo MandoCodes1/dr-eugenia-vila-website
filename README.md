@@ -1,10 +1,10 @@
-# Dr. Eugenia Vila Dental Clinic Website
+# Fully Functional Dental Clinic Website
 
 **Live Site**: [https://www.dreugeniavila.com/](https://www.dreugeniavila.com/en/)
 
-A professional bilingual (Spanish/English) website for a dental clinic in Málaga, Spain. Built as a full-stack web development project demonstrating modern frontend practices and production-ready deployment.
+Built a professional website as a side project for a dental clinic in Málaga, Spain, using Astro, TypeScript, and Tailwind CSS.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework**: Astro 5.0 (static site generation)
 - **Language**: TypeScript
@@ -12,7 +12,7 @@ A professional bilingual (Spanish/English) website for a dental clinic in Málag
 - **Icons**: Astro Icon
 - **Deployment**: Production deployment with custom domain
 
-## ✨ Key Features
+## Features
 
 - **Internationalization**: Full bilingual support (Spanish/English) with dynamic language switching
 - **Responsive Design**: Mobile-first, optimized for all devices
@@ -21,7 +21,7 @@ A professional bilingual (Spanish/English) website for a dental clinic in Málag
 - **Component Architecture**: Modular, reusable component system
 - **Type Safety**: Full TypeScript implementation
 
-## 🏗️ Technical Highlights
+## Technical Highlights
 
 - Implemented custom i18n system for bilingual content management
 - Built reusable component library with Astro components
@@ -29,7 +29,7 @@ A professional bilingual (Spanish/English) website for a dental clinic in Málag
 - Structured data markup for better search engine visibility
 - Production deployment with custom domain configuration
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 src/
@@ -41,26 +41,3 @@ src/
 ├── utils/          # Utility functions (i18n, reviews processing)
 └── types/          # TypeScript definitions
 ```
-
-## 🛠️ Development
-
-```bash
-npm install
-npm run dev      # Start dev server
-npm run build    # Build for production
-npm run preview  # Preview production build
-```
-
-## 📊 Skills Demonstrated
-
-- Modern frontend framework (Astro)
-- TypeScript for type-safe development
-- Responsive web design
-- Internationalization (i18n)
-- SEO best practices
-- Component-based architecture
-- Production deployment
-
----
-
-**Note**: This is a real-world project deployed for a professional dental clinic, demonstrating practical application of modern web development skills.
